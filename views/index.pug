@@ -1,0 +1,50 @@
+extends layout
+
+block content
+
+    include includes/login.pug
+    .full-view
+        .logo__container
+            img(src='images/Logo.png', alt='uno-logo' class='logo')
+
+            if authorized
+                .modal__create-game
+                    form(class="modal__create-game--form" action="/create" method="post")
+                        label.modal__create-game--label Give your game name!
+                        input(name="name" class="modal__create-game--input" type="text" placeholder="uno sin fin")
+                        button(class="modal__create-game--button-submit" type="submit") Go
+                        button.modal__create-game--button-cancel cancel
+
+                .start-page-buttons
+                    a(href='#' class='start-button shadow') Start a new game
+                    a(href='/lobby' class='join-button shadow') Join an existing game
+                    form(action="/logout?_method=DELETE" method="POST" class='logout-button shadow')
+                        button(type="submit" class="unstyled-button") Log Out
+            else
+                a.button__login-signup.shadow Login / Signup
+
+            img(src='images/arrow.png' class='home-arrow')
+                
+        .spinContainer
+            include includes/cardspin.pug
+        .bg-texture
+
+    .full-view
+        h1 How to Play
+        .card-types
+            include includes/cardtypes.pug
+
+    if authorized
+        .full-view
+            .chat
+                h1.chat__title CHAT
+                .chat__box
+                    .chat__box--messages
+                    .chat__box--form-container
+                        form.chat__box--form
+                            input(type="text" class="chat__box--input")
+                            button.chat__box--button
+                                img(src="images/arrow.png" class="chat__box--button-img")
+    else
+        .full-view
+            h1 Sign in order to chat

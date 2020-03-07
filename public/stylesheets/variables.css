@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: rgb(108, 214, 101);
+    --red: rgb(255, 87, 87);
+    --yellow: rgb(255, 222, 89);
+    --blue: rgb(81, 113, 255);
+    --green: rgb(126, 217, 88);
+    --light-grey: rgb(240, 240, 240);
+    --grey: rgb(209, 209, 209);
+    --dark-grey: rgb(116, 116, 116);
+
+    --main-font: 'Kefa-Regular';
+    --secondary-font: 'helvetica';
+}
+
+.shadow {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: .1s;
+
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.shadow:hover {
+    top: -5px;
+    left: -10px;
+
+    -webkit-box-shadow: 17px 12px 7px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 17px 12px 7px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 17px 12px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: 'Kefa-Regular';
+    src: url('fonts/Kefa-Regular.TTF');
+}

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Results
+    .title
+        p #{gameNum}
+  each res in result
+    p= res.id
+    p= res.createdAt
+    p= res.testString
+    br

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h #[a(href="/index" style="color:blue") Back].
+    body(bgcolor="#E6E6FA")
+    h1 List
+        each res in result
+            h
+                p username : #{res.username}
+                p user email : #{res.email}
+                p user password : #{res.password}
+                p |

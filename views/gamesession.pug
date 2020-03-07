@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .session(id=playerId)
+        .play-space
+            .header
+                a(href="/lobby")
+                    img(src="images/arrow.png" class="header__back-button")
+                h1.header__title #{gameName}
+                div
+                
+            //- h1.button__start Start Game
+            .button__start.shadow
+                .button__start--circle
+                    p.button__start--num Start
+
+            .deck
+                .hand__card.played
+                    .hand__card--circle
+                        p.hand__card--num 0
+                .hand__card.pile.shadow
+            .hand
+
+        .sidebar
+            .score
+
+            .session-chat
+                .session-chat__messages
+                
+                form.session-chat__form
+                    input( type="text" class="session-chat__form-input" placeholder="Type your message here")
+                    button(type="submit" class="session-chat__form--button")
+                        img(src="images/arrow.png" class="session-chat__form--img")
+
+        .bg-texture
+            

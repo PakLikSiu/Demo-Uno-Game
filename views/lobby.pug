@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .lobby
+        .lobby__header
+            a(href="index")
+                img(src="images/arrow.png" class="lobby__back-button")
+            h1.lobby-title Choose a game
+            div 
+        .lobby__sessions
+            each game in games
+                a.lobby__session--instance.shadow(href="/join/" + game.id)
+                    h3.lobby__session--name #{game.gameName}
+                    .lobby__session--player-list
+                        each player in game.Players
+                            p.lobby__session--player #{player.User.username[0]}
+
+            else
+                h1 There are no lobbies
+                
+        .bg-texture
+
